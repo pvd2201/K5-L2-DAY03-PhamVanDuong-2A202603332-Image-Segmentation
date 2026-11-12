@@ -2,8 +2,8 @@
 
 **Cách dùng:** Thay mọi dấu `…` bằng bài làm thật của bạn trước khi nộp link fork trên [LMS](https://aithucchien.vinuni.edu.vn). Giữ nguyên bốn mục và bảng để coach đọc nhanh. Viết ngắn, cụ thể theo ảnh/vùng; không cần thuật ngữ chuyên sâu. Ví dụ trong [hướng dẫn mẫu](../../reports/REPORT_TEMPLATE.md) chỉ giúp hiểu cách điền, không phải câu trả lời để chép lại.
 
-- Mã học viên theo lớp: …
-- Ngày / CVAT local: …
+- Mã học viên theo lớp: 2A202603332
+- Ngày / CVAT local: Nov 12th 26
 - Công cụ đã dùng: …
 
 Mã học viên là mã lớp cấp; không cần ghi họ tên trong report nếu kênh [LMS](https://aithucchien.vinuni.edu.vn) đã nhận diện bạn. Chỉ ghi công cụ thật sự đã dùng; không có SAM vẫn làm bài bình thường.
@@ -14,9 +14,9 @@ Ghi tên ZIP đúng như file trong `submissions/` và số ảnh đã vẽ, Sav
 
 | Task | File ZIP đúng tên | Hoàn thành mấy ảnh | Điểm tối đa (coach chấm sau) |
 | --- | --- | ---: | ---: |
-| easy_semantic | … | … / 3 | 20 |
-| medium_instance | … | … / 3 | 32 |
-| hard_panoptic | … | … / 2 | 30 |
+| easy_semantic | easy_semantic | 3 / 3 | 20 |
+| medium_instance | medium_instance | 3 / 3 | 32 |
+| hard_panoptic | hard_panoptic | 1 / 2 | 30 |
 | cp1_holes | … | … / 1 | 3 |
 | cp2_slice | … | … / 1 | 3 |
 | cp5_occlusion | … | … / 1 | 3 |
@@ -54,6 +54,6 @@ Mỗi ca là một **vùng cụ thể** khiến bạn phải cân nhắc hai cá
 
 | Ảnh/vị trí | Hai cách hiểu có thể | Quy tắc/chứng cứ | Quyết định hoặc câu hỏi cho coach |
 | --- | --- | --- | --- |
-| 1 | … | … | … |
-| 2 | … | … | … |
-| 3 | … | … | … |
+| 1. Hard – Ảnh 1: đèn giao thông và cột đỡ |Cách 1: Chỉ vẽ polygon bao quanh hộp đèn. Cách 2: Vẽ polygon bao gồm cả hộp đèn và cột đỡ |Theo quy tắc thì không gộp các đối tượng thuộc những class khác nhau vào cùng một instance.  | Câu hỏi: phải vẽ theo cách nào? |
+| 2. Medium- Ảnh thứ 2 |Cách 1: Vẽ một polygon duy nhất bao quanh toàn bộ chiếc xe, kể cả phần bị che khuất. Cách 2: Vẽ hai polygon riêng cho hai phần xe nhìn thấy được. | Chiếc xe màu vàng bị chia làm 2 nửa bởi người đi đường | Vẽ hai polygon cho hai phần nhìn thấy và đưa chúng vào cùng một Group để biểu diễn một đối tượng xe duy nhất. Không vẽ phần xe bị che khuất. |
+| 3. Hard – Ảnh 1: Người xuất hiện rất nhỏ trong ảnh | Cách 1: Vẫn vẽ polygon và gán class person cho đối tượng. Cách 2: Không gán nhãn vì kích thước quá nhỏ, không đủ thông tin để xác định chắc chắn đó là người | Đối tượng có kích thước rất nhỏ, ít chi tiết và khó nhận diện. Không nên tự suy đoán class khi không có đủ bằng chứng hình ảnh. | Không gán nhãn nếu không thể xác định chắc chắn đối tượng là người. Nếu có thể nhận diện được khi phóng to ảnh, chỉ vẽ phần nhìn thấy được. |
